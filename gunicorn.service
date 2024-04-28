@@ -6,6 +6,7 @@ After=network.target
 User=fast
 Group=fast
 WorkingDirectory=/home/fast/deployment/API-Develop
+EnvironmentFile=/home/fast/deployment/API-Develop/.env
 Environment="PATH=/home/fast/deployment/API-Develop/venv"
 ExecStart=/home/fast/deployment/API-Develop/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0
 
